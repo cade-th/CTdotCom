@@ -8,7 +8,7 @@
     <h2 class="mt-4 text-lg md:text-xl lg:text-2xl text-gray-700">
         This app has full user-authentication, works on any screen size, and has a full postgreSQL database.
     </h2>
-    <a href="https://github.com/yourusername/yourrepository"
+    <a href="https://github.com/cade-th/CTdotCom"
        class="mt-2 text-blue-600 hover:text-blue-800 transition duration-300"
        target="_blank">
         View the Source Code
