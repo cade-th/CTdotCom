@@ -15,7 +15,7 @@
     function updateCubePosition() {
         // Adjust these values to position the cube under the GitHub link
         cubePosition.x = 0;
-        cubePosition.y = -1.3;
+        cubePosition.y = -0.5;
         cubePosition.z = 0;
     }
 
@@ -75,7 +75,10 @@
             <slot></slot>
         </div>
 
-        <Footer />
+        <div class="footer-container">
+            <Footer />
+        </div>
+        
     </div>
 </div>
 
@@ -98,6 +101,10 @@
         position: fixed;
         width: 100%;
         z-index: 2; /* Ensure the header is above the content and canvas */
+    }
+
+    .footer-container {
+        margin-top:400px;
     }
 
     .welcome-message {
