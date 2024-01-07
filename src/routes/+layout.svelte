@@ -15,7 +15,7 @@
     function updateCubePosition() {
         // Adjust these values to position the cube under the GitHub link
         cubePosition.x = 0;
-        cubePosition.y = -0.5;
+        cubePosition.y = -0.1;
         cubePosition.z = 0;
     }
 
