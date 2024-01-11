@@ -21,6 +21,8 @@ supabase.auth.onAuthStateChange((event, session) => {
 	} //hi
 });
 
+
+
 export default {
 
     get user() {
@@ -32,6 +34,53 @@ export default {
 	},
 	signOut() {
 		return supabase.auth.signOut();
+    },
+
+    
+
+	// Todo-related methods
+    todos: {
+        async fetchAll(): Promise<App.Todo[]> {
+            const { data, error } = await supabase
+                .from('todos')
+                .select('*');
+    
+            console.log("sending todo data");
+    
+            if (error) {
+                console.error(error);
+                return []; // Return an empty array in case of error
+            }
+    
+            // Cast the returned data to an array of Todo
+            return (data as App.Todo[]) || [];
+        },
+        async add(newTodoText: string) {
+            console.log("ready to send data to supabase");
+            const { data, error } = await supabase
+                .from('todos')
+                .insert([{ text: newTodoText }]);
+
+            if (error) {
+                console.error(error);
+                return null;
+            }
+            console.log("added Todo to supabase")
+            return data;
+        },
+        async remove(todoId: number) {
+            const { data, error } = await supabase
+                .from('todos')
+                .delete()
+                .match({ id: todoId });
+
+            if (error) {
+                console.error(error);
+                return null;
+            }
+            console.log("removed Todo from supabase")
+            return data;
+        },
     },
 
     test: {

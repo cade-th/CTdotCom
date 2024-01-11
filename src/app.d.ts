@@ -8,7 +8,12 @@ declare global {
 		// interface Error {}
 		interface Locals {
 			supabase: SupabaseClient;
-			getSession(): Promise<Session | null>;
+			getSession(): Promise<Session | null>
+		}
+		interface Todo {
+			id: number;
+			text: string;
+			// Include other properties of a todo item here
 		}
 		// interface PageData {}
 		// interface Platform {}

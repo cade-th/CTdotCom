@@ -2,24 +2,10 @@
 	import '../app.css';
 	import { invalidate } from '$app/navigation';
 	import { onMount } from 'svelte';
+    
 	
 	import Header from '$lib/components/header.svelte'
 	import Footer from '$lib/components/footer.svelte';
-
-	import { Canvas } from '@threlte/core'
-	import Scene from '$lib/components/scene.svelte'
-
-    // Position variables for the cube
-    let cubePosition = { x: 0, y: 0, z: 0 };
-
-    function updateCubePosition() {
-        // Adjust these values to position the cube under the GitHub link
-        cubePosition.x = 0;
-        cubePosition.y = -0.0;
-        cubePosition.z = 0;
-    }
-
-
 
 	export let data;
 
@@ -27,9 +13,6 @@
 	$: ({ supabase, session } = data);
 
 	onMount(() => {
-        updateCubePosition();
-        window.addEventListener('resize', updateCubePosition);
-
 		const {
 			data: { subscription }
 		} = supabase.auth.onAuthStateChange((event, _session) => {
@@ -37,13 +20,13 @@
 				invalidate('supabase:auth');
 			}
 		});
-
 		return () => subscription.unsubscribe();
 	});
 
 	async function logout() {
 		await supabase.auth.signOut();
 	}
+    
 </script>
 <svelte:head>
     <title>CTdotCom</title>
@@ -51,10 +34,6 @@
 </svelte:head>
 
 <div class="relative min-h-screen">
-    <!-- Canvas container -->
-    <div class="canvas-container">
-        <Scene {cubePosition} />
-    </div>
 
     <!-- Content on top of the canvas -->
     <div class="content-container font-mono">
@@ -83,14 +62,7 @@
 </div>
 
 <style>
-    .canvas-container {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1; /* Place canvas behind all other content */
-    }
+    
 
     .content-container {
         position: relative;

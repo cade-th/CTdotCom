@@ -10,9 +10,11 @@
           <li>
             <a href="/Projects">Projects</a>
             <ul class="p-2">
+              <li><a href="/Projects/Todos">SQL Queries</a></li>
               <li><a href="/Projects/Site">This website</a></li>
               <li><a href="/Projects/3D">3D Engine</a></li>
               <li><a href="/Projects/STM">STM32</a></li>
+
             </ul>
           </li>
           <li><a href="/Dashboard">Dashboard</a></li>
@@ -27,6 +29,7 @@
           <details>
             <summary>Projects</summary>
             <ul class="p-2">
+                <li><a href="/Projects/Todos">SQL Queries</a></li>
                 <li><a href="/Projects/Site">This website</a></li>
                 <li><a href="/Projects/3D">3D Engine</a></li>
                 <li><a href="/Projects/STM">STM32</a></li>
