@@ -16,7 +16,11 @@
                             method="POST" 
                             action="?/removeTodo" 
                             >
-                            <input type="hidden" name="todoID" value={todo.id} />
+                            <input 
+                                type="hidden" 
+                                name="todoID" 
+                                value={todo.id} 
+                                />
                             <button class="btn btn-error text-white btn-xs">Delete</button>
                         </form>
                     </td>

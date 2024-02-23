@@ -1,9 +1,9 @@
 <script lang="ts">
-  export let data;
-  import { enhance } from '$app/forms';
   import TodosList from '../../../lib/components/todos.svelte'
+  
+  export let data;
+  const todos = data.todos
 
-  let todos = data.todos;
 </script>
 
 {#if data.session}
@@ -14,12 +14,17 @@
       action="?/addTodo" 
       method="POST" 
       > 
-      <input type="text" name="todoText" placeholder="Type here" class="input input-bordered input-error w-full max-w-xs" /> 
-      <button class="btn mt-5" type="submit">Add Todo</button> 
+      <input 
+        type="text" 
+        name="todoText" 
+        placeholder="Type here" 
+        class="input input-bordered input-error w-full max-w-xs" 
+        /> 
+        <button class="btn mt-5" type="submit">Add Todo</button> 
     </form> 
 
     <div class="content-center">
-      <TodosList {todos} />
+      <TodosList {todos}  />
     </div>
 
   </div>

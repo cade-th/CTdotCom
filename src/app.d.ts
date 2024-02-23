@@ -15,6 +15,12 @@ declare global {
 			text: string;
 			// Include other properties of a todo item here
 		}
+		interface Comments {
+			id: number;
+			name: string;
+			email: string;
+			body: string;
+		}
 		// interface PageData {}
 		// interface Platform {}
 	}

@@ -1,14 +1,10 @@
 import db from '../../../lib/db';
 import type { PageServerLoad, Actions } from './$types';
 
-export const load: PageServerLoad = async ({ parent }) => {
-  // Access session data from +layout.server.ts
-  const { session } = await parent();
+export const load: PageServerLoad = async () => {
   const todos = await db.todos.fetchAll(); 
-
   return {
     todos,
-    session // pass the session data to the page
   };
 };
 
