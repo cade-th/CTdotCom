@@ -15,7 +15,6 @@
               <li><a href="/Projects/Site">This website</a></li>
               <li><a href="/Projects/3D">3D Engine</a></li>
               <li><a href="/Projects/STM">STM32</a></li>
-              <li><a href="/Projects/Eli">Eli</a></li>
 
             </ul>
           </li>
@@ -36,7 +35,6 @@
                 <li><a href="/Projects/Site">This website</a></li>
                 <li><a href="/Projects/3D">3D Engine</a></li>
                 <li><a href="/Projects/STM">STM32</a></li>
-                <li><a href="/Projects/Eli">Eli</a></li>
             </ul>
           </details>
         </li>
